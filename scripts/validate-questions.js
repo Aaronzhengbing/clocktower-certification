@@ -8,9 +8,9 @@ const QUESTIONS_FILE = path.join(__dirname, '..', 'data', 'questions.json');
 
 // 期望配置
 const EXPECTED = {
-  total: 500,
-  single: 200,
-  judge: 300,
+  total: 1000,
+  single: 400,
+  judge: 600,
   categories: ['游戏机制', '角色能力', '能力互动', '角色相克', '特殊情况'],
   difficulties: ['easy', 'normal', 'hard']
 };

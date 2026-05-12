@@ -18,7 +18,7 @@ async function render() {
 
     app.innerHTML = `
       <h1 class="home-logo">🕯️ 染钟楼说书人认证备考</h1>
-      <p class="home-subtitle">基于钟楼百科 246 页规则文档 · 持续扩充中的精选题目</p>
+      <p class="home-subtitle">基于钟楼百科 246 页规则文档 · 1000 道精选题目</p>
 
       <div class="home-actions">
         <!-- 学习卡片 -->
