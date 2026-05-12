@@ -1,0 +1,210 @@
+/**
+ * 错题本页样式
+ */
+
+.mistakes-page {
+  min-height: 100vh;
+  padding: var(--space-4);
+}
+
+.mistakes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: var(--space-4);
+}
+
+.mistakes-header h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.mistakes-back {
+  color: var(--text-secondary);
+}
+
+.mistakes-count-badge {
+  background: var(--faction-evil);
+  color: white;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* 搜索和筛选 */
+.mistakes-filter {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.mistakes-search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.mistakes-search input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.mistakes-search input::placeholder {
+  color: var(--text-muted);
+}
+
+.mistakes-search input:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+}
+
+.mistakes-category-filter {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.mistakes-category-btn {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  transition: all var(--transition-fast);
+}
+
+.mistakes-category-btn:hover,
+.mistakes-category-btn.active {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.mistakes-category-btn.active {
+  background: rgba(212, 168, 67, 0.1);
+}
+
+.mistakes-actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  justify-content: flex-end;
+}
+
+/* 错题卡片 */
+.mistakes-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.mistake-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.mistake-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-3);
+}
+
+.mistake-card-title {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  flex: 1;
+  padding-right: var(--space-4);
+}
+
+.mistake-card-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: var(--space-2);
+}
+
+.mistake-card-ans {
+  font-size: 0.85rem;
+  margin-top: var(--space-2);
+}
+
+.mistake-card-ans .user {
+  color: var(--faction-evil);
+}
+
+.mistake-card-ans .correct {
+  color: var(--faction-good);
+}
+
+.mistake-card-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.mistake-card .btn-small {
+  min-width: auto;
+  padding: var(--space-2) var(--space-3);
+}
+
+/* 空状态 */
+.mistakes-empty {
+  text-align: center;
+  padding: var(--space-10);
+  color: var(--text-secondary);
+}
+
+.mistakes-empty .icon {
+  font-size: 4rem;
+  margin-bottom: var(--space-4);
+}
+
+/* 底部操作 */
+.mistakes-footer {
+  margin-top: var(--space-6);
+  display: flex;
+  justify-content: center;
+}
+
+.mistakes-footer .btn {
+  min-width: 200px;
+}
+
+@media (max-width: 640px) {
+  .mistakes-header {
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+
+  .mistakes-filter {
+    flex-direction: column;
+  }
+
+  .mistakes-search {
+    min-width: 100%;
+  }
+
+  .mistakes-card-header {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .mistake-card-actions {
+    width: 100%;
+  }
+
+  .mistake-card .btn-small {
+    flex: 1;
+  }
+}

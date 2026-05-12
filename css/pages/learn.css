@@ -1,0 +1,141 @@
+/**
+ * 学习模式页样式
+ */
+
+.learn-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4);
+}
+
+.learn-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: var(--space-4);
+}
+
+.learn-back {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.learn-progress-info {
+  flex: 1;
+  text-align: center;
+}
+
+.learn-progress-info .current {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.learn-category-tags {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.learn-question-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.learn-question-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.learn-options {
+  margin-bottom: var(--space-4);
+}
+
+.learn-feedback {
+  margin-top: var(--space-4);
+}
+
+.learn-footer {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.learn-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-5);
+  margin-bottom: var(--space-3);
+}
+
+.learn-stat {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.learn-stat.correct { color: var(--faction-good); }
+.learn-stat.wrong { color: var(--faction-evil); }
+
+.learn-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.learn-nav .btn {
+  flex: 1;
+}
+
+.learn-nav .btn-prev {
+  max-width: 140px;
+}
+
+.learn-nav .btn-next {
+  max-width: 140px;
+}
+
+/* 答题完成提示 */
+.learn-complete-banner {
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-gold);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  text-align: center;
+  margin-top: var(--space-4);
+}
+
+.learn-complete-banner .banner-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+  margin-bottom: var(--space-3);
+}
+
+.learn-complete-banner .banner-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .learn-header {
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+
+  .learn-nav {
+    flex-direction: column;
+  }
+
+  .learn-nav .btn {
+    max-width: 100%;
+  }
+}

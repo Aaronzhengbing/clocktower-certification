@@ -1,0 +1,10 @@
+{
+  "name": "clocktower-certification",
+  "version": "1.0.0",
+  "description": "染钟楼说书人认证备考工具",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate-questions.js",
+    "serve": "npx serve ."
+  }
+}
