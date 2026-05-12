@@ -1,7 +1,7 @@
 /**
  * LocalStorage 统一封装
  */
-const { STORAGE_KEYS } = require('../constants');
+import { STORAGE_KEYS } from '../constants.js';
 
 class StorageManager {
   // 获取数据
@@ -53,4 +53,4 @@ class StorageManager {
 }
 
 const storage = new StorageManager();
-module.exports = { StorageManager, storage };
+export { StorageManager, storage };

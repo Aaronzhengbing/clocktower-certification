@@ -1,8 +1,8 @@
 /**
  * 评分引擎
  */
-const { POINTS, TOTAL_SCORE, EXAM_CONFIG } = require('../constants');
-const { getQuestionById } = require('../utils/question-engine');
+import { POINTS, TOTAL_SCORE, EXAM_CONFIG } from '../constants.js';
+import { getQuestionById } from '../utils/question-engine.js';
 
 /**
  * 计算考试分数
@@ -72,7 +72,7 @@ function formatTime(seconds) {
   return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
 }
 
-module.exports = {
+export {
   calculateScore,
   formatScore,
   formatTime

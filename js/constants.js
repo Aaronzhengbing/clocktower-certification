@@ -67,7 +67,7 @@ const CATEGORY_CLASS = {
   [QUESTION_CATEGORY.SPECIAL_CASE]: 'special-case'
 };
 
-module.exports = {
+export {
   QUESTION_TYPE,
   QUESTION_CATEGORY,
   DIFFICULTY,

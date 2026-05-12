@@ -2,9 +2,9 @@
  * 练习模式引擎
  * 支持顺序练习 和 随机练习 500 道题
  */
-const { storage } = require('../utils/storage');
-const { MistakeManager } = require('./mistake-manager');
-const { loadQuestions, getQuestionsByType, shuffleArray } = require('../utils/question-engine');
+import { storage } from '../utils/storage.js';
+import { MistakeManager } from './mistake-manager.js';
+import { loadQuestions, getQuestionsByType, shuffleArray } from '../utils/question-engine.js';
 
 class QuizEngine {
   /**
@@ -210,4 +210,4 @@ class QuizEngine {
   }
 }
 
-module.exports = { QuizEngine };
+export { QuizEngine };

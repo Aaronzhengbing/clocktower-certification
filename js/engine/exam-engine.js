@@ -2,11 +2,11 @@
  * 考试模式引擎
  * 16 单选 + 26 判断 = 42 题，满分 100 分，限时 120 分钟
  */
-const { storage } = require('../utils/storage');
-const { MistakeManager } = require('./mistake-manager');
-const { loadQuestions, getQuestionsByType, shuffleArray } = require('../utils/question-engine');
-const { calculateScore } = require('./scorer');
-const { EXAM_CONFIG } = require('../constants');
+import { storage } from '../utils/storage.js';
+import { MistakeManager } from './mistake-manager.js';
+import { loadQuestions, getQuestionsByType, shuffleArray } from '../utils/question-engine.js';
+import { calculateScore } from './scorer.js';
+import { EXAM_CONFIG } from '../constants.js';
 
 class ExamEngine {
   constructor() {
@@ -241,4 +241,4 @@ class ExamEngine {
   }
 }
 
-module.exports = { ExamEngine };
+export { ExamEngine };

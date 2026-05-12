@@ -1,13 +1,13 @@
 /**
  * 题目加载与查询引擎
  */
-const { QUESTION_TYPE } = require('../constants');
+import { QUESTION_TYPE } from '../constants.js';
 
 let questionsCache = null;
 
 /**
  * 加载题目JSON（从 data/questions.json）
- * @returns {Promise<Array>} 题目数组
+ * @returns {Promise<Object>} 包含 list, map, meta, stats 的对象
  */
 async function loadQuestions() {
   if (questionsCache) return questionsCache;
@@ -82,7 +82,7 @@ function getStats() {
   return questionsCache.stats;
 }
 
-module.exports = {
+export {
   loadQuestions,
   getQuestionById,
   getQuestionsByType,

@@ -1,8 +1,8 @@
 /**
  * 错题本管理引擎
  */
-const { storage } = require('../utils/storage');
-const { getQuestionById } = require('../utils/question-engine');
+import { storage } from '../utils/storage.js';
+import { getQuestionById } from '../utils/question-engine.js';
 
 class MistakeManager {
   constructor() {
@@ -124,4 +124,4 @@ class MistakeManager {
   }
 }
 
-module.exports = { MistakeManager };
+export { MistakeManager };

@@ -3,6 +3,7 @@
  */
 import { formatScore, formatTime } from '../engine/scorer.js';
 import { MistakeManager } from '../engine/mistake-manager.js';
+import { EXAM_CONFIG } from '../constants.js';
 
 const app = document.getElementById('app');
 let examResult = null;
@@ -146,8 +147,5 @@ function truncate(str, maxLen) {
   if (str.length <= maxLen) return str;
   return str.slice(0, maxLen);
 }
-
-// 需要导入 EXAM_CONFIG
-const EXAM_CONFIG = { PASS_SCORE: 90 };
 
 render();

@@ -129,10 +129,10 @@ function bindEvents() {
 }
 
 function filterMistakes(category) {
-  const filtered = mistakeManager.getMistakes(category).map(m => {
-    const q = mistakeManager.mistakes.find(mm => mm.questionId === m.questionId);
-    return { ...m, questionData: q };
-  });
+  const mistakesWithQuestionData = mistakeManager.getMistakeQuestions();
+  const filtered = category === 'all'
+    ? mistakesWithQuestionData
+    : mistakesWithQuestionData.filter(m => m.category === category);
 
   if (filtered.length === 0) {
     document.querySelector('.mistakes-list').innerHTML = `
@@ -145,12 +145,36 @@ function filterMistakes(category) {
 
   // 重新渲染卡片
   const cardsHTML = filtered.map(m => {
-    // ... 复用上面的卡片逻辑（简化版）
-    return ''; // 简化：完整实现需重构
+    const q = m.questionData;
+    const userLabel = q.type === 'single' ? m.userAnswer : (m.userAnswer === 'true' ? '是' : '否');
+    const correctLabel = q.type === 'single' ? m.correctAnswer : (m.correctAnswer === 'true' ? '是' : '否');
+    const catColor = CATEGORY_COLORS[q.category] || '#6B5B7A';
+    const dateStr = new Date(m.timestamp).toLocaleDateString('zh-CN');
+
+    return `
+      <div class="mistake-card">
+        <div class="mistake-card-header">
+          <div>
+            <div class="mistake-card-title">${q.question}</div>
+            <div class="mistake-card-meta">
+              <span class="tag ${CATEGORY_CLASS[q.category]}" style="border-left-color: ${catColor}; color: ${catColor};">${q.category}</span>
+              · ${dateStr}
+            </div>
+            <div class="mistake-card-ans">
+              <span class="user">你选 ${userLabel}</span>
+              · <span class="correct">正确 ${correctLabel}</span>
+            </div>
+          </div>
+          <div class="mistake-card-actions">
+            <a href="question-detail.html?id=${q.id}" class="btn btn-small btn-outline">查看</a>
+            <button class="btn btn-small btn-danger" data-remove="${q.id}">删除</button>
+          </div>
+        </div>
+      </div>
+    `;
   }).join('');
 
-  // 简单刷新整个页面更可靠
-  render();
+  document.querySelector('.mistakes-list').innerHTML = cardsHTML;
 }
 
 render();
