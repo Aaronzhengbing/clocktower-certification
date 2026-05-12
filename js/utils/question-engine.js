@@ -12,7 +12,7 @@ let questionsCache = null;
 async function loadQuestions() {
   if (questionsCache) return questionsCache;
 
-  const res = await fetch('/data/questions.json');
+  const res = await fetch('data/questions.json');
   if (!res.ok) throw new Error(`Failed to load questions: ${res.status}`);
   const data = await res.json();
 
